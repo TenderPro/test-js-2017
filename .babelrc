@@ -1,0 +1,45 @@
+{
+    "presets": [
+        "react",
+        [
+            "es2015",
+            {
+                "modules": false
+            }
+        ],
+        "stage-0"
+    ],
+    "plugins": [
+        [
+            "transform-runtime",
+            {
+                "helpers": false,
+                "polyfill": false,
+                "regenerator": true
+            }
+        ],
+        "syntax-dynamic-import"
+    ],
+    "env": {
+        "test": {
+            "presets": [
+                "react",
+                "es2015",
+                "stage-0"
+            ],
+            "plugins": [
+                "dynamic-import-node",
+                [
+                    "module-resolver",
+                    {
+                        "root": ["./"],
+                        "alias": {
+                            "@tpro/core": "./packages/core/src",
+                            "@tpro/components": "./packages/components/src"
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+}
